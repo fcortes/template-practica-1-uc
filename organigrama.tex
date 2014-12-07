@@ -1,0 +1,84 @@
+
+
+\tikzstyle{box}=[rectangle, draw=black,
+        text centered, anchor=north,, text width=4cm]
+\tikzstyle{smbox}=[rectangle, draw=black,
+        text centered, anchor=north,, text width=2cm]
+\tikzstyle{line}=[-, thick]
+
+\begin{center}
+
+\begin{tikzpicture}[node distance=2cm]
+	\node (GG) [box, rectangle split, rectangle split parts=2]
+        {
+            \textbf{Miguel Nenadovich}
+            \nodepart{second}Gerente General
+        };
+        
+	\node (A) [box, rectangle split, rectangle split parts=2, below=of GG]
+        {
+            \textbf{Andrés Carvallo}
+            \nodepart{second}Administrador
+        };
+	\node (J2) [box, rectangle split, rectangle split parts=2, below=of A]
+        {
+            \textbf{Onofre Ormeño}
+            \nodepart{second} Jefe \textit{Packing}
+        };
+	\node (J1) [box, rectangle split, rectangle split parts=2, left=of J2]
+        {
+            \textbf{Juan José Camacho}
+            \nodepart{second} Jefe Técnico
+        };
+	\node (J3) [box, rectangle split, rectangle split parts=2, right=of J2]
+        {
+            \textbf{Julio Cornejo}
+            \nodepart{second}Jefe Producción
+        };  
+
+	\node (Sup) [box, rectangle, below=of J2]
+        {
+            \textbf{Supervisor}
+        };
+              
+	\node (T1) [smbox, rectangle, below=of Sup, xshift=-6cm]
+        {
+            \textbf{Control de calidad}
+        };
+	\node (T2) [smbox, rectangle, right=0.2cm of T1]
+        {
+            \textbf{Selección de calibre}
+        };
+	\node (T3) [smbox, rectangle, right=0.2cm of T2]
+        {
+            \textbf{Control de peso}
+        };
+	\node (T4) [smbox, rectangle, right=0.2cm of T3]
+        {
+            \textbf{Armado de cajas}
+        };
+	\node (T5) [smbox, rectangle, right=0.2cm of T4]
+        {
+            \textbf{Peso fijo}
+        };
+	\node (T6) [smbox, rectangle, right=0.2cm of T5]
+        {
+            \textbf{Embalaje de cajas}
+        };
+
+     
+     
+     \draw[line] (GG.south) --  (A.north);
+     \draw[line] (A.south) -- (J2.north);
+     \draw[line] (J1.north) -- ++(0,0.8) -| (J3.north);
+     \draw[line] (J2.south) -- (Sup.north);
+     
+     \draw[line] (T1.north) -- ++(0,0.8) -| (T6.north);
+     \draw[line] (T2.north) -- ++(0,0.8);
+     \draw[line] (T3.north) -- ++(0,0.75);
+     \draw[line] (T4.north) -- ++(0,0.75);
+     \draw[line] (T5.north) -- ++(0,1.15);
+     \draw[line] (Sup.south) -- ++(0,-1.2);
+\end{tikzpicture}
+
+\end{center}

@@ -1,0 +1,234 @@
+\documentclass[12pt]{article}
+
+% Para escribir en español con acentos, etc
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\renewcommand\spanishtablename{Tabla}
+\renewcommand{\spanishlisttablename}{Índice de tablas}
+
+% Para insertar imágenes
+\usepackage{graphicx}
+
+% Para el organigrama
+\usepackage{tikz}
+\usetikzlibrary{positioning,shapes,arrows}
+
+
+%%%%%%%%%%%%%%%%
+%% Formato del informe %%%
+%%%%%%%%%%%%%%%%
+
+% Márgenes: arriba-izquierda=3cm, abajo-derecha: 2.5cm
+\usepackage[top=3cm, left=3cm, bottom=2.5cm, right=2.5cm]{geometry}
+
+% Sangría 0.49''
+\setlength\parindent{0.49in}
+\usepackage{indentfirst}
+
+% Espacio entre párrafos (no está en el formato, pero se ve mejor así)
+\setlength{\parskip}{0.5cm plus 2mm minus 2mm}
+
+% Interlineado 1.5
+\linespread{1.5}\selectfont
+
+% Fuente Times New Roman
+% Con luatex o xetex es times new roman de verdad, sino, es Adobe Times o parecido (en mi opinion más lindo, pero no sé si lo acepten en el informe)
+\usepackage{ifxetex}
+\usepackage{ifluatex}
+\ifxetex
+	\usepackage{fontspec}
+	\setmainfont{Times New Roman}
+\else
+	\ifluatex
+		\usepackage{fontspec}
+		\setmainfont{Times New Roman}
+	\else
+		\usepackage{mathptmx}
+	\fi
+\fi
+
+% Tamaño de los títulos tienen que ser todos 12, además sacamos la negrita de (sub)subsecciones
+\usepackage{sectsty}
+\sectionfont{\normalsize}
+\subsectionfont{\normalfont\normalsize}
+\subsubsectionfont{\normalfont\normalsize}
+
+% 2 espacios antes y después de títulos de secciones y capítulos (alguien usará eso?)
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{24pt plus 4pt minus 2pt}{24pt plus 2pt minus 2pt}
+\titlespacing{\chapter}{0pt}{24pt plus 4pt minus 2pt}{24pt plus 2pt minus 2pt}
+
+% 2 espacios antes y despues de figuras y tablas
+\usepackage{subfig}
+\captionsetup{aboveskip=24pt}
+\setlength{\floatsep}{24.0pt plus 2.0pt minus 4.0pt}
+\setlength{\textfloatsep}{\floatsep}
+\setlength{\intextsep}{\floatsep}
+
+% Para hacer citas con espaciado simple
+\usepackage{setspace}
+\newcommand{\cita}[1]{\begin{spacing}{1.0} #1 \end{spacing}}
+
+% Numeración tablas y figuras
+\usepackage{chngcntr}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+\renewcommand\thetable{\thesection-\arabic{table}}
+\renewcommand\thefigure{\thesection-\arabic{figure}}
+
+% Portada
+\usepackage{anyfontsize}
+
+% Para que las figuras y tablas no hagan cosas raras
+\usepackage{float}
+\restylefloat{table}
+
+\newcommand{\alumno}{Felipe Simón Cortés Saavedra}
+\newcommand{\email}{ficortes@uc.cl}
+\newcommand{\empresa}{Nombre de la empresa}
+\newcommand{\fecha}{Viernes 10 de Octubre de 2014}
+
+\begin{document}
+
+\input{portada}
+
+\tableofcontents
+\listoftables
+\listoffigures
+\newpage
+
+\section{Introducción}
+
+Párrafo 1
+
+
+Párrafo 2
+
+
+\section{Descripción General y estructura de la Empresa}
+\subsection{Descripción General}
+
+
+
+\subsection{Tamaño - Actividad - Productos}
+
+
+
+\subsection{Estructura de la Empresa}
+
+
+
+\subsection{Organigrama}
+\begin{figure}[H]
+\input{organigrama}
+\caption{Organigrama}
+\end{figure}
+
+\begin{table}[H]
+\begin{tabular}{|c|p{12cm}|}
+\hline
+Esta & es una tabla. \\
+\hline
+Otra fila & de la tabla. \\
+\hline
+Muchas filas & exactamente iguales, todas las que vienen son iguales, pero están para rellenar espacio. Bla bla bla bla bla. \\
+\hline
+Muchas filas & exactamente iguales, todas las que vienen son iguales, pero están para rellenar espacio. Bla bla bla bla bla. \\
+\hline
+Muchas filas & exactamente iguales, todas las que vienen son iguales, pero están para rellenar espacio. Bla bla bla bla bla. \\
+\hline
+Muchas filas & exactamente iguales, todas las que vienen son iguales, pero están para rellenar espacio. Bla bla bla bla bla. \\
+\hline
+Muchas filas & exactamente iguales, todas las que vienen son iguales, pero están para rellenar espacio. Bla bla bla bla bla. \\
+\hline
+Muchas filas & exactamente iguales, todas las que vienen son iguales, pero están para rellenar espacio. Bla bla bla bla bla. \\
+\hline
+Muchas filas & exactamente iguales, todas las que vienen son iguales, pero están para rellenar espacio. Bla bla bla bla bla. \\
+\hline
+Muchas filas & exactamente iguales, todas las que vienen son iguales, pero están para rellenar espacio. Bla bla bla bla bla. \\
+\hline
+\end{tabular}
+\caption{Una tabla}
+\end{table}
+
+\subsection{Descripción del área donde trabajó el alumno}
+
+Aquí hay una enumeración
+\begin{enumerate}
+\item Cosa 1
+\item Cosa 2
+\item Cosa 3
+\item Cosa 4
+\item Cosa 5
+\end{enumerate}
+
+\section{Grupo humano con el cual el alumno trabajó}
+\subsection{Descripción de las personas con que trabajó}
+
+
+\subsection{Relación entre el alumno y los trabajadores}
+
+
+
+\section{Actividades realizadas en la práctica}
+
+\subsection{Descripción del trabajo realizado}
+
+
+\subsection{Descripción del proceso de adaptación}
+
+
+\subsection{Opinión respecto de las actividades realizadas}
+
+
+
+
+
+\section{Análisis de la percepción del trabajador sobre el trabajo y relación entre compañeros}
+\subsection{Análisis de la relación con el trabajo}
+
+
+\subsection{Análisis de la relación entre los compañeros de trabajo}
+
+
+
+\section{Relación entre los jefes y los trabajadores}
+
+
+\subsection{Análisis}
+
+
+
+\section{Condiciones laborales y garantías sociales habilitadas en la empresa}
+
+Aquí hay una descripción
+
+\begin{description}
+\item[A] A
+
+\item[B] B
+
+\item[C] C
+
+\item[D] D
+
+\end{description}
+
+
+\subsection{Análisis y comparación de la situación de la institución respecto de la situación a nivel nacional}
+
+
+
+\section{Conclusiones}
+\subsection{Principales Aprendizajes}
+
+
+
+\subsection{Principales Dificultades}
+
+
+\subsection{Principales Sugerencias}
+
+
+\end{document}
