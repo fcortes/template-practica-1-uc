@@ -33,3 +33,6 @@
 *.vrb
 *.xdy
 *.tdo
+
+
+.DS_STORE

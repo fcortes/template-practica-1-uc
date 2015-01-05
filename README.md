@@ -11,3 +11,11 @@ Algunas observaciones
 - El archivo de organigrama está de prueba no más.
 
 - No tengo ningún derecho del logo y el uso del template es absoluta y totalmente libre para cualquiera.
+
+# Uso
+
+Basta abrir `informe.tex` con algún editor de latex y compilar o correr
+
+    pdflatex informe.tex
+
+para generar el pdf
